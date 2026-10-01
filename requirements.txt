@@ -1,0 +1,2 @@
+# Runtime dependency (charts only; everything else is stdlib)
+matplotlib

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<title>FoodRescue — Live Rescue Board</title>
+<style>
+body { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; margin: 0;
+       background: #f4f7f4; color: #223; }
+header { background: linear-gradient(135deg, #1f7a3a, #2e9e5b); color: white;
+         padding: 28px 32px; }
+header h1 { margin: 0 0 6px; font-size: 30px; }
+header p { margin: 0; opacity: .9; }
+main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+section { margin-bottom: 36px; }
+h2 { border-bottom: 3px solid #2e9e5b; padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; background: white;
+        border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+th { background: #e8f3ec; text-align: left; padding: 10px 12px; font-size: 13px;
+     text-transform: uppercase; letter-spacing: .04em; }
+td { padding: 10px 12px; border-top: 1px solid #eef; font-size: 14px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px;
+         font-size: 12px; font-weight: 600; }
+.open { background: #fff3cd; color: #856404; }
+.matched { background: #cce5ff; color: #004085; }
+.claimed { background: #d4b8ff; color: #3d1a78; }
+.picked_up { background: #ffd9b3; color: #7a3c00; }
+.completed { background: #d4edda; color: #155724; }
+.tag { display: inline-block; background: #eef4ff; color: #2456a6; border-radius: 4px;
+       padding: 1px 7px; margin: 1px 2px; font-size: 12px; }
+.score { font-weight: 700; color: #1f7a3a; }
+footer { text-align: center; color: #888; font-size: 12px; padding: 18px; }
+.empty { color: #888; font-style: italic; }
+</style></head>
+<body>
+<header>
+  <h1>🍲 FoodRescue — Live Rescue Board</h1>
+  <p>Matching surplus food with shelters before it expires · SDG 2 &amp; 12</p>
+</header>
+<main>
+  <section><h2>📦 Open Listings (1)</h2>
+  <table><tr><th>Listing</th><th>Meals</th><th>Expires</th><th>Dietary tags</th><th>Status</th></tr>
+  <tr><td><strong>Banquet leftovers</strong><br><small>Grand Hotel</small></td><td>80</td><td>Oct 01, 18:57 (12.0h left)</td><td><span class="tag">veg</span> <span class="tag">gluten-free</span></td><td><span class="badge open">open</span></td></tr></table></section>
+
+  <section><h2>🤝 Active Matches (6)</h2>
+  <table><tr><th>Route</th><th>Meals</th><th>RescueScore</th><th>Status</th></tr>
+  <tr><td><strong>Chicken &amp; rice trays</strong> → North End Community Kitchen</td><td>60</td><td class="score">0.900<br><small>d=0.874 · u=0.8333 · 🍽=1.0</small></td><td><span class="badge matched">matched</span></td></tr>
+<tr><td><strong>Pasta night surplus</strong> → Westdale Outreach</td><td>40</td><td class="score">0.716<br><small>d=0.3536 · u=0.9167 · 🍽=1.0</small></td><td><span class="badge claimed">claimed</span></td></tr>
+<tr><td><strong>Sushi sets</strong> → Eastside Food Bank</td><td>20</td><td class="score">0.627<br><small>d=0.5361 · u=0.875 · 🍽=0.5</small></td><td><span class="badge matched">matched</span></td></tr>
+<tr><td><strong>Pizza slices</strong> → Mountain View Mission</td><td>35</td><td class="score">0.612<br><small>d=0.874 · u=0.375 · 🍽=0.5</small></td><td><span class="badge matched">matched</span></td></tr>
+<tr><td><strong>Produce boxes</strong> → Eastside Food Bank</td><td>50</td><td class="score">0.603<br><small>d=0.3188 · u=0.5833 · 🍽=1.0</small></td><td><span class="badge matched">matched</span></td></tr>
+<tr><td><strong>Morning pastries</strong> → North End Community Kitchen</td><td>25</td><td class="score">0.283<br><small>d=0.364 · u=0.4583 · 🍽=0.0</small></td><td><span class="badge matched">matched</span></td></tr></table></section>
+
+  <section><h2>✅ Completed Rescues (1)</h2>
+  <table><tr><th>Route</th><th>Meals</th><th>RescueScore</th><th>Status</th></tr>
+  <tr><td><strong>Cafe sandwiches</strong> → Harbourfront Shelter</td><td>30</td><td class="score">0.848<br><small>d=0.652 · u=0.9583 · 🍽=1.0</small></td><td><span class="badge completed">completed</span></td></tr></table></section>
+</main>
+<footer>Generated 2026-10-01 06:57 · FoodRescue demo · offline, no APIs</footer>
+</body></html>
