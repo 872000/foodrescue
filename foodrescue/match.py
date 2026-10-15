@@ -34,24 +34,32 @@ VOLUNTEER_H_PER_MEAL = 0.10  # ~6 min of volunteer effort per meal moved
 
 
 def hours_until_expiry(expires_at: float, now: float) -> float:
+    """Hours from `now` until the listing expires (negative if expired)."""
     return (expires_at - now) / 3600.0
 
 
 def distance(ax: float, ay: float, bx: float, by: float) -> float:
+    """Euclidean distance between two grid points."""
     return math.hypot(ax - bx, ay - by)
 
 
 def distance_score(dist: float) -> float:
+    """Decay distance to (0, 1]: 1.0 adjacent, halving roughly every
+    DISTANCE_SCALE grid units."""
     return 1.0 / (1.0 + dist / DISTANCE_SCALE)
 
 
 def urgency_score(hours_left: float) -> float:
+    """Urgency in [0, 1): 1.0 means expiring now, 0.0 means beyond the
+    horizon or already expired (expired listings are ineligible anyway)."""
     if hours_left <= 0:
         return 0.0
     return max(0.0, 1.0 - hours_left / URGENCY_HORIZON_H)
 
 
 def diet_score(listing_tags: list[str], shelter_needs: list[str]) -> float:
+    """Fraction of the shelter's dietary needs covered by the listing's
+    tags (case-insensitive). Shelters with no stated needs always score 1.0."""
     if not shelter_needs:
         return 1.0
     tags = {t.lower() for t in listing_tags}
